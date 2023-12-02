@@ -92,7 +92,7 @@ jobs:
          - name: Poetry formatter
            run: |
              poetry run task formatter
-  Security:
+  security:
      runs-on: ubuntu-latest
      defaults:
        run:
@@ -126,7 +126,7 @@ jobs:
      defaults:
        run:
          working-directory: ./example-app
-     needs: job1
+     needs: [lint, formatter, build, security]
      steps:
          - uses: actions/checkout@v3
          - name: Set up Python 3.10
