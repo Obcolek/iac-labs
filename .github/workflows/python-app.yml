@@ -34,7 +34,7 @@ jobs:
           installer-parallel: true
     - name: Install dep
       run: |
-        poetry install - no-root
+        poetry install --no-root
     - name: Poetry test
       run: |
         poetry run task test
